@@ -1,0 +1,22 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "electron app monorepo",
+  "workspaces": [
+    "apps/main-app",
+    "apps/renderer-app"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "start:main": "npm run start --workspace=apps/main-app",
+    "start:renderer": "npm run start --workspace=apps/renderer-app",
+    "start:all": "concurrently \"npm run start:renderer\" \"npm run start:main\"",
+    "build:renderer": "npm run build --workspace=apps/renderer-app",
+    "make": "npm run make --workspace=apps/main-app"
+  },
+  "author": "Filipe Freire",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
