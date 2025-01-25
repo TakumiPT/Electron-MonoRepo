@@ -13,7 +13,13 @@
     "start:all": "concurrently \"npm run start:renderer\" \"npm run wait:renderer && npm run start:main\"",
     "build:renderer": "npm run build --workspace=apps/renderer-app",
     "wait:renderer": "wait-on http://localhost:4200",
-    "make": "npm run build:renderer && npm run make --workspace=apps/main-app"
+    "make": "npm run build:renderer && npm run make --workspace=apps/main-app",
+    "lint:main": "npm run lint --workspace=apps/main-app",
+    "lint:renderer": "npm run lint --workspace=apps/renderer-app",
+    "lint:all": "concurrently \"npm run lint:renderer\" \"npm run lint:main\"",
+    "test:main": "npm run test --workspace=apps/main-app",
+    "test:renderer": "npm run test --workspace=apps/renderer-app",
+    "test:all": "concurrently \"npm run test:renderer\" \"npm run test:main\""
   },
   "author": "Filipe Freire",
   "license": "MIT",
