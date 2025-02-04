@@ -19,12 +19,14 @@
     "lint": "concurrently \"npm run lint:renderer\" \"npm run lint:main\"",
     "test:main": "npm run test --workspace=apps/main-app",
     "test:renderer": "npm run test --workspace=apps/renderer-app",
-    "test": "concurrently \"npm run test:renderer\" \"npm run test:main\""
+    "test": "concurrently \"npm run test:renderer\" \"npm run test:main\"",
+    "prepare": "husky"
   },
   "author": "Filipe Freire",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^9.1.2",
+    "husky": "^9.1.7",
     "wait-on": "^8.0.2"
   }
 }
