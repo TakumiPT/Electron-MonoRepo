@@ -22,7 +22,7 @@ const createWindow = () => {
   if (!app.isPackaged) {
     mainWindow.loadURL('http://localhost:4200');
   } else {
-    mainWindow.loadFile(path.join(__dirname, '..', 'dist', 'renderer-app', 'browser', 'index.html'));
+    mainWindow.loadFile(path.join(__dirname, 'renderer-app', 'browser', 'index.html'));
   }
 
   // Open the DevTools.

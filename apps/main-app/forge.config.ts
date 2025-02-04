@@ -1,18 +1,38 @@
 import type { ForgeConfig } from '@electron-forge/shared-types';
+import path from 'path';
 import { MakerSquirrel } from '@electron-forge/maker-squirrel';
 import { MakerZIP } from '@electron-forge/maker-zip';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerRpm } from '@electron-forge/maker-rpm';
 import { VitePlugin } from '@electron-forge/plugin-vite';
+import { MakerDMG } from '@electron-forge/maker-dmg';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
 
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
+    icon: path.join(__dirname, 'assets', 'icon.png'),
   },
   rebuildConfig: {},
-  makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+  makers: [new MakerSquirrel({
+    setupIcon: path.join(__dirname, 'assets', 'icon.ico')
+  }),
+  new MakerZIP({}, ['darwin']),
+  new MakerRpm({
+    options: {
+      icon: path.join(__dirname, 'assets', 'icon.png')
+    }
+  }),
+  new MakerDeb({
+    options: {
+      icon: path.join(__dirname, 'assets', 'icon.png')
+    }
+  }),
+  new MakerDMG({
+    icon: path.join(__dirname, 'assets', 'icon.icns')
+  })
+],
   plugins: [
     new VitePlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
@@ -30,7 +50,7 @@ const config: ForgeConfig = {
           target: 'preload',
         },
       ],
-      renderer: [],
+      renderer: [], // is not needed for this example the app is using Angular
     }),
     // Fuses are used to enable/disable various Electron functionality
     // at package time, before code signing the application
