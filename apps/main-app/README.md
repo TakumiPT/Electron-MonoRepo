@@ -41,6 +41,10 @@ The generated documentation will be placed in the output directory.
 
 This project uses the `template-vite-typescript` for `electron-forge` to leverage the benefits of Vite's fast build times and modern JavaScript features. The template provides a solid foundation for building Electron applications with TypeScript and Vite.
 
+### Use of @doubleshot/nest-electron
+
+We are using `@doubleshot/nest-electron` to integrate the NestJS framework with Electron. This allows us to leverage NestJS's powerful dependency injection, modular architecture, and extensive ecosystem within our Electron application. By using `@doubleshot/nest-electron`, we can create a more maintainable and scalable codebase, taking advantage of NestJS's features such as middleware, guards, interceptors, and more.
+
 ### No Vite Config File for Renderer
 
 There is no separate Vite config file for the renderer because the renderer is managed by the Angular framework. Angular CLI handles the build and configuration for the renderer, making a separate Vite config file unnecessary.
