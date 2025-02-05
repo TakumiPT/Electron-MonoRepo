@@ -20,13 +20,17 @@
     "test:main": "npm run test --workspace=apps/main-app",
     "test:renderer": "npm run test --workspace=apps/renderer-app",
     "test": "concurrently \"npm run test:renderer\" \"npm run test:main\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "docs:main": "npm run docs --workspace=apps/main-app",
+    "docs:renderer": "npm run docs --workspace=apps/renderer-app",
+    "docs": "concurrently \"npm run docs:renderer\" \"npm run docs:main\""
   },
   "author": "Filipe Freire",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^9.1.2",
     "husky": "^9.1.7",
+    "typedoc": "^0.27.6",
     "wait-on": "^8.0.2"
   }
 }
