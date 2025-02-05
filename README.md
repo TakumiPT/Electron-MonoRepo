@@ -33,6 +33,20 @@ To get started with the project, follow these steps:
 - `npm run make`: Builds both the Angular renderer application and the Electron main application for production.
 - `npm run lint`: Runs linting for both the Angular and Electron applications.
 - `npm run test`: Runs tests for both the Angular and Electron applications using Jest.
+- `npm run docs`: Runs the documentation generation scripts for both the main and renderer apps concurrently. This will generate the documentation using Typedoc for both applications.
+
+    ```bash
+    npm run docs
+    ```
+
+    This command is equivalent to running:
+
+    ```bash
+    npm run docs:renderer
+    npm run docs:main
+    ```
+
+    The generated documentation will be placed in the respective output directories for each app.
 
 ## Development
 

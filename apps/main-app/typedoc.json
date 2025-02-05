@@ -7,6 +7,6 @@
   "excludePrivate": false,
   "excludeProtected": false,
   "includeVersion": true,
-  "readme": "none",
+  "readme": "README.md",
   "tsconfig": "tsconfig.json"
 }

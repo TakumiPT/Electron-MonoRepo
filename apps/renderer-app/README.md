@@ -1,59 +1,50 @@
-# RendererApp
+# Renderer App (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+This is the Angular renderer application for the Electron monorepo. It is loaded by the main Electron application and provides the frontend interface.
 
-## Development server
+## Getting Started
 
-To start a local development server, run:
+To get started with the renderer application, follow these steps:
 
-```bash
-ng serve
+1. **Install Dependencies**: Navigate to the `apps/renderer-app` directory and install the dependencies.
+    ```sh
+    npm install
+    ```
+
+2. **Run the Application**: Start the Angular application.
+    ```sh
+    npm start
+    ```
+
+## Available Scripts
+
+- `npm start`: Starts the Angular application.
+- `npm run build`: Builds the Angular application for production.
+- `npm run lint`: Runs linting for the Angular application.
+- `npm run test`: Runs tests for the Angular application using Jest.
+- `npm run docs`: Generates documentation for the Angular application using Typedoc.
+
+## Project Structure
+
+- `src/`: Contains the source code for the Angular application.
+- `e2e/`: Contains end-to-end tests for the Angular application.
+
+## Documentation
+
+To generate the documentation for the Angular application, run the following command:
+```sh
+npm run docs
 ```
+The generated documentation will be placed in the output directory.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Explanation
 
-## Code scaffolding
+This project uses the `template-vite-typescript` for `electron-forge` to leverage the benefits of Vite's fast build times and modern JavaScript features. The template provides a solid foundation for building Electron applications with TypeScript and Vite.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### No Vite Config File for Renderer
 
-```bash
-ng generate component component-name
-```
+There is no separate Vite config file for the renderer because the renderer is managed by the Angular framework. Angular CLI handles the build and configuration for the renderer, making a separate Vite config file unnecessary.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Vite Main Config Public Property
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The Vite main config's public property is set to point to the `renderer-app` (Angular) dist folder. This is because the renderer application is built using Angular, and the output of the Angular build process is placed in the `dist` folder. By pointing the public property to this folder, the main process can serve the renderer application correctly.
