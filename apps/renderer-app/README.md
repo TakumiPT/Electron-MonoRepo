@@ -37,14 +37,3 @@ npm run docs
 ```
 The generated documentation will be placed in the output directory.
 
-## Explanation
-
-This project uses the `template-vite-typescript` for `electron-forge` to leverage the benefits of Vite's fast build times and modern JavaScript features. The template provides a solid foundation for building Electron applications with TypeScript and Vite.
-
-### No Vite Config File for Renderer
-
-There is no separate Vite config file for the renderer because the renderer is managed by the Angular framework. Angular CLI handles the build and configuration for the renderer, making a separate Vite config file unnecessary.
-
-### Vite Main Config Public Property
-
-The Vite main config's public property is set to point to the `renderer-app` (Angular) dist folder. This is because the renderer application is built using Angular, and the output of the Angular build process is placed in the `dist` folder. By pointing the public property to this folder, the main process can serve the renderer application correctly.
