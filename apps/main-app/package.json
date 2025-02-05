@@ -43,6 +43,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "@doubleshot/nest-electron": "^0.2.6",
+    "@grpc/proto-loader": "^0.7.13",
+    "@nestjs/common": "^11.0.5",
+    "@nestjs/core": "^11.0.5",
+    "@nestjs/microservices": "^11.0.7",
+    "@nestjs/platform-express": "^11.0.5",
+    "electron-squirrel-startup": "^1.0.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
   }
 }
