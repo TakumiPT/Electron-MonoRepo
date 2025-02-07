@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
+import { AppService } from './services/app.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,17 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'renderer-app in electron';
-  constructor(titleService: Title) {
+  version!: string;
+  name!: string;
+  constructor(titleService: Title, private readonly appService: AppService) {
     titleService.setTitle(this.title);
   }
+
+  async ngOnInit(): Promise<void> {
+    this.version = await this.appService.version();
+    this.name = await this.appService.name();
+  }
+
 }

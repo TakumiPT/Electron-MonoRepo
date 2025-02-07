@@ -4,7 +4,8 @@
   "description": "electron app monorepo",
   "workspaces": [
     "apps/main-app",
-    "apps/renderer-app"
+    "apps/renderer-app",
+    "libs/common-lib"
   ],
   "scripts": {
     "start:main": "npm run start --workspace=apps/main-app",
@@ -15,14 +16,17 @@
     "make": "npm run build:renderer && npm run make --workspace=apps/main-app",
     "lint:main": "npm run lint --workspace=apps/main-app",
     "lint:renderer": "npm run lint --workspace=apps/renderer-app",
-    "lint": "concurrently \"npm run lint:renderer\" \"npm run lint:main\"",
+    "lint:common": "npm run lint --workspace=libs/common-lib",
+    "lint": "concurrently \"npm run lint:common\" \"npm run lint:renderer\" \"npm run lint:main\"",
     "test:main": "npm run test --workspace=apps/main-app",
     "test:renderer": "npm run test --workspace=apps/renderer-app",
-    "test": "concurrently \"npm run test:renderer\" \"npm run test:main\"",
+    "test:common": "npm run test --workspace=libs/common-lib",
+    "test": "concurrently \"npm run test:common\" \"npm run test:renderer\" \"npm run test:main\"",
     "prepare": "husky",
     "docs:main": "npm run docs --workspace=apps/main-app",
     "docs:renderer": "npm run docs --workspace=apps/renderer-app",
-    "docs": "concurrently \"npm run docs:renderer\" \"npm run docs:main\""
+    "docs:common": "npm run docs --workspace=libs/common-lib",
+    "docs": "concurrently \"npm run docs:common\" \"npm run docs:renderer\" \"npm run docs:main\""
   },
   "author": "Filipe Freire",
   "license": "MIT",

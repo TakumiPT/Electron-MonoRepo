@@ -1,12 +1,18 @@
 {
-  "entryPoints": ["src"],
+  "entryPoints": [
+    "src"
+  ],
   "entryPointStrategy": "expand",
   "out": "../../docs/renderer-app",
-  "exclude": ["**/__tests__/**", "**/*.test.ts", "**/*.spec.ts"],
-  "excludeExternals": false,
+  "exclude": [
+    "**/__tests__/**",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ],
   "excludePrivate": false,
   "excludeProtected": false,
-  "includeVersion": true,
+  "excludeExternals": false,
+  "excludeNotDocumented": false,
   "readme": "README.md",
   "tsconfig": "tsconfig.json"
 }

@@ -1,10 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppService } from './services/app.service';
 
 describe('AppComponent', () => {
+  let appServiceMock: Partial<AppService>;
+
   beforeEach(async () => {
+    appServiceMock = {
+      version: jest.fn().mockResolvedValue('1.0.0'),
+      name: jest.fn().mockResolvedValue('Test App')
+    };
+
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [{ provide: AppService, useValue: appServiceMock }]
     }).compileComponents();
   });
 
@@ -24,6 +33,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, renderer-app');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Electron IPC Renderer Render');
   });
 });
