@@ -1,0 +1,27 @@
+{
+  "name": "common-lib",
+  "version": "1.0.0",
+  "description": "Shares common interfaces and classes between main-app and renderer-app",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint",
+    "test": "jest",
+    "docs": "typedoc"
+  },
+  "author": "Filipe Freire",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^34.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "@typescript-eslint/parser": "^8.23.0",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
+    "tsc": "^2.0.4",
+    "typedoc": "^0.27.6",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
+  }
+}

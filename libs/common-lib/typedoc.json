@@ -1,0 +1,12 @@
+{
+    "entryPoints": ["src"],
+    "entryPointStrategy": "expand",
+    "out": "../../docs/common-lib",
+    "tsconfig": "tsconfig.json",
+    "includeVersion": true,
+    "excludePrivate": false,
+    "excludeProtected": false,
+    "excludeExternals": false,
+    "excludeNotDocumented": false,
+    "readme": "none"
+  }

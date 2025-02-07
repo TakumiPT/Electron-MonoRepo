@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
+import { ElectronAPI } from '@common-lib';
 
 declare global {
   interface Window {
-    electron: {
-      invoke: <T>(channel: string, request: unknown) => Promise<T>;
-    };
+    electron: ElectronAPI
   }
 }
 
